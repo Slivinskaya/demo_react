@@ -1,0 +1,45 @@
+form {
+    border: 2px #000 solid;
+    padding: 5px;
+    border-radius: 15px;
+    background: rgba(16, 10, 133, 0.368);
+  }
+  form:last-child {
+    border-top: 0px;
+  }
+  
+  .listItem {
+    width: 400px;
+    padding-top: 5px;
+  }
+  
+  .listHeader {
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    font-size: 30px;
+    border-bottom: 2px #000 solid;
+  }
+  
+  button {
+    border-radius: 9px;
+    background-color: #fff;
+    margin: 5px 0;
+    font-style: italic;
+    font-size: 20px;
+    background: rgba(255, 255, 255, 0.378);
+  }
+  
+  button:last-child {
+    margin: 0px;
+  }
+  input {
+    font-size: 20px;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.237);
+  }
+  td {
+    font-weight: 500;
+    font-style: italic;
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+  }
