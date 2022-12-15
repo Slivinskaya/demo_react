@@ -4,15 +4,14 @@ import { nanoid } from "nanoid";
 import data from "./data.json";
 import "./List.css";
 
+
 const List = () => {
   const [items, setItems] = useState(data);
-  const [countPressDelete, setCountPressDelete] = useState(0);
-  const [countPressAdd, setCountPressAdd] = useState(0);
   const [addFormData, setAddFormData] = useState({
     title: "",
   });
 
-  const handleAddFormChange = (event) => {
+  function handleAddFormChange(event) {
     const fieldName = event.target.getAttribute("name");
     const fieldValue = event.target.value;
 
@@ -20,7 +19,7 @@ const List = () => {
     newFormData[fieldName] = fieldValue;
 
     setAddFormData(newFormData);
-  };
+  }
 
   const handleAddFormSubmit = (event) => {
     event.preventDefault();
@@ -49,8 +48,10 @@ const List = () => {
   };
   return (
     <div>
-      <form>
-        <div className="listHeader">count: {items.length}</div>
+      <form style={{ display: "flex", margin: 10, width: 500}}>
+        <div className="listHeader">Количество: {items.length}</div>
+        </form>
+      <form>        
         {items.map((item) => (
           <div className="listItem">
             <ReadOnly item={item} />
@@ -59,7 +60,7 @@ const List = () => {
       </form>
       <form
         onSubmit={handleAddFormSubmit}
-        style={{ display: "flex", flexDirection: "column", margin: 5, width: 400 }}
+        style={{ display: "flex", margin: 10, width: 500}}
       >
         <input
           type="text"
@@ -68,8 +69,10 @@ const List = () => {
           placeholder="Enter"
           onChange={handleAddFormChange}
         />
-        <button type="submit">Добавить</button>
-        <button type="button" onClick={() => del()}>Удалить</button>
+        <button type="submit" style={{ margin: 5}}>Добавить</button>
+        <button 
+        type="button" style={{ margin: 5}}
+        onClick={() => del()}>Удалить</button>
       </form>
     </div>
   );
